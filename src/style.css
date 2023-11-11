@@ -1,0 +1,164 @@
+:root {
+    --MainColor: #858ED1;
+    --ComplementaryColor: #D1C885;
+    --ThirdColor: #482f5f;
+    --placement-top: 0;    
+    --placement-left: 0;
+    --transform-scale: 1;
+    --transform-defaultrotation: 45deg;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-image: url('../assets/img/style/background.jpg');
+    background-color: lightblue;
+    font-family: Verdana, Tahoma, sans-serif;
+    text-shadow: 1px 1px 0.1vw var(--ThirdColor);
+    height: 100vh;
+    width: 100vw;
+    margin: 0 0 0 0;
+}
+
+h1 {
+    position: relative;
+    margin-top: 20vh;
+    font-size: 3rem;
+    color: var(--MainColor);
+    text-align: center;
+    z-index: 10;
+}
+
+h2 {
+    position: relative;
+    font-size: 5vh;
+    color: var(--MainColor);
+    text-align: center;
+    z-index: 10;
+}
+
+a:link, a:visited {
+    color: var(--MainColor);
+}
+
+#InfoMenu {
+    position: absolute;
+    z-index: 105;
+    top: 10px;
+    right: 10px;  
+}
+
+#MainButton {
+    background-color: var(--MainColor);
+    color: var(--ComplementaryColor);
+    box-sizing: content-box;
+    border-radius: 10px;
+    border-color: var(--ThirdColor);
+    border-style: solid;
+    font-size: 2.5rem;
+    position: relative;
+    z-index: 20;
+    height: 4.5rem;
+    width: 9rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer; 
+}
+
+#VolumeMenu {
+    position: relative;
+    width: 100%;
+    z-index: 15;
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+#OwnPlayed {
+    font-size: 5vh;
+    position: relative;
+    color: var(--MainColor);
+    text-align: center;
+    z-index: 10;
+}
+
+#BottomInfo {
+    position: absolute;
+    z-index: 10;
+    bottom: 5vh;
+    background-color: #00000080;
+    color: var(--ComplementaryColor);
+    width: 100%;
+    height: 3rem;
+    font-size: 2.5rem;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: marquee 30s linear;
+    animation-iteration-count: infinite;
+    justify-content:flex-end;
+}
+
+#BottomInfo:hover {
+    animation-play-state: paused;
+}
+
+#BottomInfo:empty {
+    display: none;
+}
+
+#popUpImage {
+    position: absolute;
+    z-index: 1;
+    top: var(--placement-top);
+    left: var(--placement-left);
+    transform: scale(var(--transform-scale)) rotate(var(--transform-defaultrotation));
+    animation: shake 1s;
+    animation-iteration-count: infinite; 
+}
+
+#AboutMenu {
+    display: none;
+    position: absolute;
+    z-index:100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px;
+    background: var(--ComplementaryColor); 
+    opacity: 0.85;
+    height: 66%;
+    width: 66%;
+    border: 1px solid var(--ThirdColor);
+    font-size: 1.1rem;
+    text-align: center;  
+}
+
+.closeBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    cursor: pointer;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg) scale(var(--transform-scale)) rotate(var(--transform-defaultrotation)); }
+    10% { transform: translate(-1px, -2px) rotate(-2deg) scale(var(--transform-scale)) rotate(var(--transform-defaultrotation)); }
+    20% { transform: translate(-3px, 0px) rotate(2deg) scale(var(--transform-scale)) rotate(var(--transform-defaultrotation)); }
+    30% { transform: translate(3px, 2px) rotate(0deg) scale(var(--transform-scale)) rotate(var(--transform-defaultrotation)); }
+    40% { transform: translate(1px, -1px) rotate(2deg) scale(var(--transform-scale)) rotate(var(--transform-defaultrotation)); }
+    50% { transform: translate(-1px, 2px) rotate(-2deg) scale(var(--transform-scale)) rotate(var(--transform-defaultrotation)); }
+    60% { transform: translate(-3px, 1px) rotate(0deg) scale(var(--transform-scale)) rotate(var(--transform-defaultrotation)); }
+    70% { transform: translate(3px, 1px) rotate(-2deg) scale(var(--transform-scale)) rotate(var(--transform-defaultrotation)); }
+    80% { transform: translate(-1px, -1px) rotate(2deg) scale(var(--transform-scale)) rotate(var(--transform-defaultrotation)); }
+    90% { transform: translate(1px, 2px) rotate(0deg) scale(var(--transform-scale)) rotate(var(--transform-defaultrotation)); }
+    100% { transform: translate(1px, -2px) rotate(-2deg) scale(var(--transform-scale)) rotate(var(--transform-defaultrotation)); }
+} 
+
+@keyframes marquee {
+    0%   { text-indent: 100vw }
+    80%  { text-indent: -15vw }
+    100% { text-indent: -15vw }
+}

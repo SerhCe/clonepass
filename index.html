@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Clonepass</title>
+    <meta name="description" content="Press the Button for cool sound!">
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
+    <script type="text/javascript" src="src/scripts.js"></script>
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎶</text></svg>">
+</head>
+
+<body>
+    <div id="InfoMenu">
+        <img src="assets/img/icons/info-svgrepo-com.svg" width="50" onclick="toggleInfoMenu('AboutMenu')" onmouseover=""
+            style="cursor: pointer;" alt="Info Button">
+    </div>
+
+    <div id="MainBody">
+        <h1>Press the Button!</h1>
+
+        <div id="PlaySoundButton">
+            <button onclick="buttonClick()" id="MainButton">Button!</button>
+        </div>
+
+        <div id="VolumeMenu">
+            <img src="assets/img/icons/sound-max-svgrepo-com.svg" width="20" onclick="muteAudio()"
+                style="cursor: pointer;" alt="Sound Button">
+            <input type="range" id="volume-control" onchange="setAudio()" min="0" max="100">
+        </div>
+
+        <div id="OwnPlayed">
+            <span id="numberOwnPlayed">0</span>
+        </div>
+    </div>
+
+    <div id="BottomInfo"></div>
+
+    <div id="AboutMenu">
+        <div id="closeMenuBtn" class="closeBtn" onclick="toggleInfoMenu('AboutMenu')">
+            <img src="assets/img/icons/close-square-svgrepo-com.svg" width="33" alt="X in Square">
+        </div>
+        <h2>Credits</h2>
+        Icons by <a href="https://www.svgrepo.com/">svgrepo.com</a>
+        <br>
+        Sound Effect from <a href="https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=83407">Pixabay</a>
+        <br>
+        Backgroundimage by <a href="https://pixabay.com/users/felixmittermeier-4397258/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3625405">PayPal.me/FelixMittermeier</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3625405">Pixabay</a>
+    </div>
+
+    <script>
+        window.onload = createAndGetOnLoad();
+    </script>
+</body>
+
+</html>
